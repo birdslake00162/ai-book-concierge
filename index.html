@@ -12,6 +12,15 @@
         :root { --rakuten-red: #bf0000; --x-black: #000000; --fb-blue: #1877F2; }
         body { background-color: #f4f7f6; font-family: 'Helvetica Neue', Arial, sans-serif; padding: 20px; }
         .container { max-width: 850px; margin: auto; }
+        
+        /* PR表記 */
+        .pr-mark {
+            font-size: 0.75rem;
+            color: #666;
+            margin-bottom: 5px;
+            text-align: right;
+        }
+
         .input-card { border: none; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); padding: 30px; background: white; margin-bottom: 30px; }
         .btn-search { background-color: var(--rakuten-red); color: white; border: none; padding: 15px; border-radius: 10px; font-weight: bold; width: 100%; transition: background-color 0.2s; }
         .btn-search:hover { background-color: #9d0000; color: white; }
@@ -31,7 +40,10 @@
         .btn-sns { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white !important; font-size: 0.9rem; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: opacity 0.2s; text-decoration: none; border: none; }
         
         #loading { display: none; text-align: center; padding: 50px; }
-        .affiliate-notice { font-size: 0.75rem; color: #999; text-align: center; margin-top: 40px; }
+        
+        /* フッターエリア */
+        .app-footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; font-size: 0.8rem; color: #777; }
+        .app-footer a { color: #bf0000; text-decoration: none; }
         
         @media (max-width: 600px) { 
             .book-card { flex-direction: column; } 
@@ -42,6 +54,8 @@
 </head>
 <body>
     <div class="container">
+        <p class="pr-mark">※本サイトはプロモーションが含まれています</p>
+        
         <h2 class="text-center mb-4 fw-bold" style="color: var(--rakuten-red);">📚 AI選書コンシェルジュ Pro</h2>
         
         <div class="input-card">
@@ -89,9 +103,13 @@
         </div>
         <div id="results"></div>
         
-        <div class="affiliate-notice">
-            <p>【広告】当サイトは楽天アフィリエイトプログラムに参加しています。</p>
-        </div>
+        <footer class="app-footer">
+            <p>※当サイトの「選書理由」等はAIによって生成されたものであり、内容の正確性を保証するものではありません。</p>
+            <p class="mb-2">
+                <a href="https://webservice.rakuten.co.jp/" target="_blank">Supported by Rakuten Developers</a>
+            </p>
+            <p class="mb-0">&copy; AI選書コンシェルジュ Pro</p>
+        </footer>
     </div>
 
     <script>
